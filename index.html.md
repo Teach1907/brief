@@ -1,0 +1,177 @@
+<!DOCTYPE html>  
+<html lang="de">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Für dich güzelim</title>  
+  
+<!-- Schreibschrift Font -->  
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">  
+  
+<style>  
+body {  
+    margin: 0;  
+    height: 100vh;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    background: linear-gradient(135deg, #ff4d88, #ff99cc);  
+    font-family: 'Segoe UI', sans-serif;  
+    overflow: hidden;  
+}  
+  
+body::before {  
+    content: "";  
+    position: absolute;  
+    width: 400px;  
+    height: 400px;  
+    background: rgba(255,255,255,0.2);  
+    filter: blur(120px);  
+    border-radius: 50%;  
+}  
+  
+/* Herz */  
+.heart {  
+    position: absolute;  
+    font-size: 70px;  
+    cursor: pointer;  
+    animation: pulse 1.5s infinite;  
+    z-index: 3;  
+}  
+  
+@keyframes pulse {  
+    0% { transform: scale(1); }  
+    50% { transform: scale(1.2); }  
+    100% { transform: scale(1); }  
+}  
+  
+/* Umschlag */  
+.envelope {  
+    width: 320px;  
+    height: 200px;  
+    background: #fff;  
+    position: relative;  
+    border-radius: 10px;  
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);  
+    overflow: hidden;  
+}  
+  
+.flap {  
+    position: absolute;  
+    width: 100%;  
+    height: 100%;  
+    background: #ffccd9;  
+    clip-path: polygon(0 0, 50% 60%, 100% 0);  
+    transition: transform 0.8s ease;  
+    transform-origin: top;  
+    z-index: 2;  
+}  
+  
+.letter {  
+    position: absolute;  
+    width: 90%;  
+    height: 260px;  
+    background: white;  
+    left: 5%;  
+    top: 20px;  
+    border-radius: 10px;  
+    padding: 20px;  
+    box-sizing: border-box;  
+    transform: translateY(100%);  
+    transition: transform 1s ease;  
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);  
+    overflow-y: auto;  
+}  
+  
+/* TEXT STYLE */  
+.text {  
+    opacity: 0;  
+    transition: opacity 1s ease;  
+    line-height: 1.6;  
+}  
+  
+/* Schreibschrift für alles im Brief */  
+.text, .title, .signature {  
+    font-family: 'Dancing Script', cursive;  
+}  
+  
+/* Überschrift */  
+.title {  
+    font-size: 28px;  
+    margin-bottom: 10px;  
+}  
+  
+/* Haupttext */  
+.main {  
+    font-size: 18px;  
+    color: #333;  
+}  
+  
+/* Signatur */  
+.signature {  
+    margin-top: 20px;  
+    font-size: 14px;  
+    color: #777;  
+}  
+  
+/* Animation */  
+.open .flap {  
+    transform: rotateX(180deg);  
+}  
+  
+.open .letter {  
+    transform: translateY(-60px);  
+}  
+  
+.open .text {  
+    opacity: 1;  
+}  
+</style>  
+  
+</head>  
+  
+<body>  
+  
+<div class="heart" onclick="openLetter()">❤️</div>  
+  
+<div class="envelope" id="envelope">  
+    <div class="flap"></div>  
+  
+    <div class="letter">  
+        <div class="text">  
+            <div class="title">Hey Maya‘m</div>  
+  
+            <div class="main">  
+Ich wollte dir einfach mal etwas sagen.  
+  
+Ich habe diesen Brief selber scripted/coded, er ist nicht Perfekt, ich gab aber mein bestes…  
+  
+Weißt du Maya‘m heute der 01.05.2026 der Tag in Düsseldorf am Rhein fühlte sich an wie ein Traum. Die Sonne vor uns am untergehen. Die Sonne rechts von mir am aufgehen. So unglaublich schön. Es fühlt sich alles immer noch wie verliebt sein an, obwohl das Gefühl schon lange weg ist.  
+  
+Als wir durch die Straßen gingen, sah ich wie du auf die anderen Damen geschaut hast und die ein oder andere beneidet hast. Wobei ich die ganze Zeit nicht aufhören konnte auf dich zu schauen. Maya, du warst am leuchten, nein - du warst am strahlen. Von allen Menschen die Dort waren konnte ich nur dich sehen.   
+Ich schau dich an und denke mir nur wow.  
+  
+Hör mal Maya‘m es fällt mir schwer das alles zu sagen, weil ich gegen das Gefühl kämpfe, ob ich zu viel Liebe für dich zeige — oder gar das sogar an Wert verlieren würde. Aber du bist eine Dame die nie wirklich Liebe von einem Mann spüren konnte, du verdienst viel mehr. Die „Komplimente“ so zu nennen fühlt sich auch nicht richtig an, denn das sind einfach meine Gedanken die ich Laut ausspreche. Es ist die Wahrheit. Du bist Perfekt-.  
+  
+Weißt du was ich mich frage:  
+Vielleicht, vielleicht wenn die „Komplimente“ anfangen an Wert zu verlieren, hast du Bestätigung genug, wie Perfekt du bist. Wie wenig du diese Veränderungen brauchst, sei es Gewicht, sei es Bräune, Haare, Augen, Augenbrauen, Lippen, Hände, Zähne und weiteres. Es ist alle perfekt und soll bitte so bleiben, ich liebe das alles an dir, find dir nicht selbst Komplexe.  
+  
+Maya ich liebe dich, bitte bleib so wie du bist, ich werde dich nicht „mehr“ lieben, wenn du anders aussiehst, denn du bist schon Perfekt.  
+            </div>  
+  
+            <div class="signature">  
+Dein Scheiß Törke  
+            </div>  
+        </div>  
+    </div>  
+</div>  
+  
+<script>  
+function openLetter() {  
+    document.querySelector(".heart").style.display = "none";  
+    document.getElementById("envelope").classList.add("open");  
+}  
+</script>  
+  
+</body>  
+</html>  
