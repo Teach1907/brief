@@ -126,6 +126,23 @@ body::before {
 .open .text {  
     opacity: 1;  
 }  
+
+.photo {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+    margin: 15px auto 5px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.caption {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
 </style>  
   
 </head>  
@@ -172,6 +189,22 @@ function openLetter() {
     document.getElementById("envelope").classList.add("open");  
 }  
 </script>  
+
+<div class="main">
+
+    <!-- Bild 1 -->
+    <img src="bild1.jpg" class="photo">
+    <div class="caption">„Ich Liebe dein Lächeln“</div>
+
+    <!-- Bild 2 -->
+    <img src="bild2.jpg" class="photo">
+    <div class="caption">„Egal wo wir sind – Hauptsache zusammen.“</div>
+
+    <!-- Bild 3 -->
+    <img src="bild3.jpg" class="photo">
+    <div class="caption">„Du machst aus normalen Tagen besondere Erinnerungen.“</div>
+
+</div>
   
 </body>  
 </html>  
